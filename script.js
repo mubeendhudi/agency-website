@@ -7,6 +7,44 @@ if (navigationType !== 'back_forward') {
     window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
+const heroStats = document.querySelector('.hero-stats');
+const heroCounters = heroStats?.querySelectorAll('strong[data-count-target]') ?? [];
+
+if (heroStats && heroCounters.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroCounters.forEach((counter) => {
+        counter.textContent = `0${counter.textContent.replace(/[0-9]/g, '')}`;
+    });
+
+    const animateHeroCounters = () => {
+        heroCounters.forEach((counter) => {
+            const target = Number(counter.dataset.countTarget);
+            const suffix = counter.textContent.replace(/[0-9]/g, '');
+            const duration = 1400;
+            let startTime;
+
+            const updateCounter = (currentTime) => {
+                startTime ??= currentTime;
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                const easedProgress = 1 - (1 - progress) ** 3;
+                counter.textContent = `${Math.round(target * easedProgress)}${suffix}`;
+
+                if (progress < 1) requestAnimationFrame(updateCounter);
+            };
+
+            requestAnimationFrame(updateCounter);
+        });
+    };
+
+    const heroStatsObserver = new IntersectionObserver((entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+            animateHeroCounters();
+            observer.disconnect();
+        }
+    }, { threshold: 0.25 });
+
+    heroStatsObserver.observe(heroStats);
+}
+
 const revealItems = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

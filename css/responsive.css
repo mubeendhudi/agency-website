@@ -23,6 +23,15 @@
     .contact-orbit {
         width: 38%;
     }
+
+    .ai-callout {
+        padding: 34px 38px;
+        gap: 30px;
+    }
+
+    .ai-callout h2 {
+        font-size: 25px;
+    }
 }
 
 /* Tablet and mobile navigation */
@@ -81,6 +90,21 @@
     .hero-foot {
         left: 7vw;
         right: 7vw;
+    }
+
+    .hero-insights {
+        flex-wrap: wrap;
+        gap: 28px;
+        margin-top: 54px;
+    }
+
+    .hero-stats {
+        flex: 1 1 360px;
+        gap: 18px;
+    }
+
+    .hero-stat strong {
+        font-size: 34px;
     }
 
     section.section,
@@ -184,6 +208,27 @@
         background-position: 67% center;
     }
 
+    .hero-insights {
+        display: grid;
+        gap: 26px;
+        margin-top: 44px;
+    }
+
+    .hero-stats {
+        gap: 10px;
+    }
+
+    .hero-stat > span {
+        font-size: 10px;
+    }
+
+    .hero-scroll-link {
+        display: flex;
+        justify-self: start;
+        align-items: center;
+        gap: 12px;
+    }
+
     .hero h1 {
         font-size: 48px;
     }
@@ -192,6 +237,30 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 22px;
+    }
+
+    .ai-callout-section {
+        padding: 0 7vw 56px;
+    }
+
+    .ai-callout {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 28px 24px;
+        gap: 24px;
+        border-radius: 18px;
+    }
+
+    .ai-callout h2 {
+        font-size: 23px;
+    }
+
+    .ai-callout-copy > p:last-child {
+        font-size: 13px;
+    }
+
+    .ai-callout .hero-cta-primary {
+        min-height: 60px;
     }
 
     .section-heading h2,

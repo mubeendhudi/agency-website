@@ -194,7 +194,7 @@ body::before {
 
 .hero {
     min-height: 650px;
-    padding: 100px 10vw 80px;
+    padding: 88px 10vw 80px;
     background: transparent;
     align-items: flex-start;
 }
@@ -207,7 +207,7 @@ body::before {
 }
 
 .hero-copy {
-    max-width: 660px;
+    max-width: 860px;
 }
 
 .eyebrow {
@@ -253,10 +253,247 @@ h2 em {
     letter-spacing: .04em;
 }
 
+.hero-actions > a,
+.ai-callout .hero-cta-primary {
+    min-width: 246px;
+    min-height: 76px;
+    padding: 0 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 999px;
+    box-sizing: border-box;
+    font: 800 15px Manrope, sans-serif;
+    letter-spacing: 0;
+    text-decoration: none;
+    transition: background .3s ease, background-position .4s ease, border-color .3s ease, box-shadow .3s ease, color .3s ease, transform .3s ease;
+}
+
+.hero-actions .hero-cta-primary,
+.ai-callout .hero-cta-primary {
+    border: 1px solid transparent;
+    background: linear-gradient(110deg, #4bc7e9 0%, #7165e8 54%, #b51fe2 100%);
+    background-size: 140% 100%;
+    background-position: left center;
+    color: #07100f;
+    box-shadow: 0 10px 28px rgba(61, 174, 225, .2);
+}
+
+.hero-cta-primary span {
+    display: inline-flex;
+    filter: grayscale(1) brightness(.2);
+    transition: transform .3s ease;
+}
+
+.ai-callout .hero-cta-primary span svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hero-cta-primary:hover,
+.hero-cta-primary:focus-visible {
+    background-position: right center;
+    box-shadow: 0 15px 34px rgba(145, 55, 225, .32);
+    transform: translateY(-3px);
+}
+
+.hero-cta-primary:hover span,
+.hero-cta-primary:focus-visible span {
+    transform: translateX(4px);
+}
+
+.hero-actions .hero-cta-secondary {
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(255, 255, 255, .015);
+    color: #f5f4ee;
+}
+
+.hero-actions .hero-cta-secondary svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform .3s ease;
+}
+
+.hero-actions .hero-cta-secondary:hover,
+.hero-actions .hero-cta-secondary:focus-visible {
+    border-color: rgba(139, 224, 173, .58);
+    background: rgba(40, 199, 111, .08);
+    box-shadow: 0 10px 28px rgba(40, 199, 111, .12);
+    color: #fff;
+}
+
+.hero-actions .hero-cta-secondary:hover svg,
+.hero-actions .hero-cta-secondary:focus-visible svg {
+    transform: translateX(4px);
+}
+
+.hero-actions > a:focus-visible {
+    outline: 2px solid var(--accent-green-light);
+    outline-offset: 4px;
+}
+
+.hero-insights {
+    display: flex;
+    align-items: center;
+    gap: 66px;
+    margin-top: 66px;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 36px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-stat {
+    display: grid;
+    gap: 8px;
+}
+
+.hero-stat strong {
+    width: fit-content;
+    background: linear-gradient(110deg, #48c5e8, #8d63ec);
+    background-clip: text;
+    color: transparent;
+    font: 800 38px/1 Manrope, sans-serif;
+}
+
+.hero-stat > span {
+    color: #a6a4a2;
+    font: 600 12px/1.4 Manrope, sans-serif;
+    white-space: nowrap;
+}
+
+.hero-scroll-link {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    color: #8d8988;
+    font: 700 10px/1.3 Manrope, sans-serif;
+    letter-spacing: .08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .25s ease;
+}
+
+.hero-scroll-link:hover,
+.hero-scroll-link:focus-visible {
+    color: var(--accent-green-light);
+}
+
+.hero-scroll-icon {
+    width: 20px;
+    height: 32px;
+    display: grid;
+    justify-items: center;
+    padding-top: 6px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 999px;
+}
+
+.hero-scroll-icon > span {
+    width: 4px;
+    height: 7px;
+    border-radius: 999px;
+    background: #48c5e8;
+    animation: scroll-cue 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    55% { transform: translateY(7px); opacity: .45; }
+}
+
 .hero-foot {
     left: 10vw;
     right: 10vw;
     color: #d4e0ec;
+}
+
+.ai-callout-section {
+    padding: 0 max(4.5vw, 28px) 72px;
+}
+
+.ai-callout {
+    min-height: 242px;
+    padding: 40px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    box-sizing: border-box;
+    border: 1px solid rgba(139, 224, 173, .16);
+    border-radius: 22px;
+    background:
+        radial-gradient(ellipse at 92% 50%, rgba(51, 155, 116, .15), transparent 42%),
+        linear-gradient(112deg, rgba(23, 13, 31, .92), rgba(13, 18, 25, .94) 58%, rgba(10, 28, 24, .93));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.ai-callout-copy {
+    max-width: 700px;
+}
+
+.ai-callout-badge {
+    width: fit-content;
+    margin: 0 0 18px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(155, 96, 238, .18);
+    border-radius: 999px;
+    background: rgba(111, 42, 166, .17);
+    color: #bd8af4;
+    font: 700 12px/1 Manrope, sans-serif;
+}
+
+.ai-callout-badge svg {
+    width: 13px;
+    height: 13px;
+    fill: currentColor;
+}
+
+.ai-callout h2 {
+    margin: 0 0 12px;
+    color: #f7f6f0;
+    font: 800 28px/1.25 Manrope, sans-serif;
+}
+
+.ai-callout h2 span {
+    background: linear-gradient(100deg, #4bc7e9, #9b54ec);
+    background-clip: text;
+    color: transparent;
+}
+
+.ai-callout-copy > p:last-child {
+    max-width: 660px;
+    margin: 0;
+    color: #aaa9a8;
+    font: 500 14px/1.75 Manrope, sans-serif;
+}
+
+.ai-callout .hero-cta-primary {
+    min-height: 68px;
+    flex: 0 0 auto;
 }
 
 /* Theme content sections and service cards */
