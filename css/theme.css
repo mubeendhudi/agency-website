@@ -19,7 +19,7 @@ body {
     color: #18314d;
     position: relative;
     isolation: isolate;
-    background: transparent;
+    background: #080b09;
     font-size: 15px;
 }
 
@@ -28,7 +28,11 @@ body::before {
     position: fixed;
     z-index: -1;
     inset: 0;
-    background: url('https://fixelcloud.com/wp-content/uploads/2025/04/new-banner-scaled-1.jpg') center / cover no-repeat;
+    background-color: #080b09;
+    background-image:
+        radial-gradient(ellipse at 88% 8%, rgba(47, 116, 67, .18), transparent 44%),
+        repeating-linear-gradient(45deg, rgba(89, 155, 105, .045) 0 1px, transparent 1px 56px),
+        repeating-linear-gradient(135deg, rgba(89, 155, 105, .035) 0 1px, transparent 1px 56px);
     pointer-events: none;
 }
 
@@ -58,6 +62,14 @@ body::before {
     top: 0;
     z-index: 30;
     color: #fff;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    transition: background-color .35s ease-in-out, backdrop-filter .35s ease-in-out, box-shadow .35s ease-in-out;
+}
+
+.site-header.is-sticky {
     background: rgba(24, 27, 30, .72);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
@@ -177,13 +189,14 @@ body::before {
 
 /* Theme hero and buttons */
 .section-dark {
-    background: #0d2d50;
+    background: transparent;
 }
 
 .hero {
     min-height: 650px;
-    padding: 110px 10vw 80px;
-    background: linear-gradient(90deg, rgba(7, 31, 57, .66), rgba(7, 31, 57, .22));
+    padding: 100px 10vw 80px;
+    background: transparent;
+    align-items: flex-start;
 }
 
 .hero-grid,
