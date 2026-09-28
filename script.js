@@ -13,14 +13,10 @@ revealItems.forEach((item) => observer.observe(item));
 
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
-const closeDropdowns = () => nav.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
-    dropdown.open = false;
-});
 
 const setMenuOpen = (isOpen) => {
     nav.classList.toggle('open', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
-    if (!isOpen) closeDropdowns();
 };
 
 menuToggle.addEventListener('click', () => {
