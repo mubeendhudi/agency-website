@@ -17,8 +17,8 @@ html {
 
 body {
     margin: 0;
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--line);
+    color: var(--paper);
     font-family: 'Manrope', sans-serif;
     font-size: 16px;
 }
@@ -38,7 +38,7 @@ a {
 }
 
 .site-header {
-    height: 82px;
+    height: 100px;
     padding: 0 28px;
     display: flex;
     align-items: center;
@@ -46,7 +46,7 @@ a {
     position: absolute;
     z-index: 10;
     width: 100%;
-    color: white;
+    background-color: rgb(37, 37, 37);
 }
 
 .brand {
