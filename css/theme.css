@@ -1035,6 +1035,135 @@ section.section-light .project-meta p {
     background: transparent;
 }
 
+.faq-section {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 7vw;
+    padding: 92px max(6vw, 28px);
+    background: transparent;
+}
+
+.faq-heading h2 {
+    margin: 20px 0;
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.12;
+}
+
+.faq-heading > p:last-child {
+    max-width: 380px;
+    color: #c1d0de;
+    line-height: 1.75;
+}
+
+.faq-list {
+    border-top: 1px solid rgba(255, 255, 255, .16);
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+    interpolate-size: allow-keywords;
+}
+
+.faq-item::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition: block-size .32s ease, opacity .24s ease, content-visibility .32s allow-discrete;
+}
+
+.faq-item[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+}
+
+.faq-item summary {
+    min-height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.5;
+    list-style: none;
+    cursor: pointer;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    flex: 0 0 auto;
+    color: var(--accent-green-light);
+    content: '+';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+    content: '-';
+}
+
+.faq-item > p {
+    max-width: 620px;
+    margin: -2px 34px 20px 0;
+    color: rgba(255, 255, 255, .76);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.faq-item > p a {
+    color: var(--accent-green-light);
+    font-weight: 700;
+}
+
+.testimonials {
+    padding: 92px max(6vw, 28px);
+    background: transparent;
+}
+
+.testimonials .heading-note {
+    color: #c1d0de;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 48px;
+}
+
+.testimonial-video {
+    overflow: hidden;
+    border: 1px solid rgba(139, 224, 173, .2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .025);
+}
+
+.testimonial-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #101712;
+}
+
+.testimonial-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.testimonial-video h3 {
+    margin: 0;
+    padding: 18px 20px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
 .cooperation-list {
     border-top: 1px solid rgba(255, 255, 255, .25);
     border-color: #dce6ee;
