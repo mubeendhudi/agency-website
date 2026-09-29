@@ -268,6 +268,7 @@ h2 em {
 .hero-actions > a,
 .ai-callout .hero-cta-primary,
 .about-copy .hero-cta-primary,
+.contact-copy .hero-cta-primary,
 .work-heading .hero-cta-primary,
 .quote-section .hero-cta-primary,
 .service-cta-button {
@@ -289,6 +290,7 @@ h2 em {
 .hero-actions .hero-cta-primary,
 .ai-callout .hero-cta-primary,
 .about-copy .hero-cta-primary,
+.contact-copy .hero-cta-primary,
 .work-heading .hero-cta-primary,
 .quote-section .hero-cta-primary,
 .service-cta-button {
@@ -912,13 +914,43 @@ section.section-light .project-meta p {
     max-width: 720px;
 }
 
+.project-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .025);
+}
+
 .project-grid {
-    gap: 35px 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
     margin-top: 50px;
 }
 
+.project-wide {
+    grid-column: auto;
+}
+
 .project-art {
-    min-height: 350px;
+    min-height: 0;
+    aspect-ratio: 720 / 520;
+}
+
+.project-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.project-art:after {
+    background: linear-gradient(135deg, rgba(40, 199, 111, .16), rgba(0, 0, 0, .36));
+}
+
+.project-card:hover .project-art img {
+    transform: scale(1.04);
 }
 
 .project-art-one {
@@ -947,6 +979,8 @@ section.section-light .project-meta p {
 
 .project-meta {
     border-color: #dce6ee;
+    border-bottom: 0;
+    padding: 18px;
 }
 
 .project-meta p {
@@ -1036,12 +1070,16 @@ section.section-light .project-meta p {
 }
 
 .contact-orbit {
-    width: 430px;
+    width: min(100%, 430px);
+    flex: 0 1 430px;
     height: auto;
-    min-height: 340px;
-    padding: 35px;
-    border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 0;
+    min-height: 0;
+    padding: 32px;
+    border: 1px solid rgba(139, 224, 173, .2);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(40, 199, 111, .12), rgba(17, 24, 20, .92) 68%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .22);
     transform: none;
 }
 
@@ -1056,15 +1094,22 @@ section.section-light .project-meta p {
 }
 
 .office-details p {
+    margin: 0 0 26px;
     color: var(--accent-green-light);
     font: 11px 'DM Mono', monospace;
     letter-spacing: .12em;
 }
 
 .office-details h3 {
-    margin: 22px 0 7px;
+    margin: 0 0 8px;
     color: white;
     font-size: 18px;
+}
+
+.office-details h3:not(:first-of-type) {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
 }
 
 .office-details span,
@@ -1074,6 +1119,11 @@ section.section-light .project-meta p {
     color: #c1d0de;
     font-size: 13px;
     line-height: 1.6;
+}
+
+.office-details a {
+    color: var(--accent-green-light);
+    font-weight: 700;
 }
 
 .site-footer {

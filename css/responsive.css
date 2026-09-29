@@ -16,6 +16,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .industry-card:nth-child(2n) {
         border-right: 0;
     }
