@@ -276,6 +276,18 @@
         grid-template-columns: 1fr;
     }
 
+    .service-cta-wrap {
+        margin-top: 56px;
+    }
+
+    .service-cta-button {
+        width: min(333px, 100%);
+        min-width: 0;
+        min-height: 60px;
+        padding: 0 18px;
+        font-size: 13px;
+    }
+
     .industry-card,
     .industry-card:nth-child(2n) {
         border-right: 0;

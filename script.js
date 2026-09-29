@@ -57,6 +57,29 @@ const observer = new IntersectionObserver((entries) => {
 
 revealItems.forEach((item) => observer.observe(item));
 
+const serviceCards = document.querySelectorAll('.service-card');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (finePointer && !prefersReducedMotion) {
+    serviceCards.forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+            const bounds = card.getBoundingClientRect();
+            const pointerX = (event.clientX - bounds.left) / bounds.width;
+            const pointerY = (event.clientY - bounds.top) / bounds.height;
+            const maxTilt = 7;
+
+            card.style.setProperty('--card-tilt-x', `${(pointerY - .5) * maxTilt}deg`);
+            card.style.setProperty('--card-tilt-y', `${(.5 - pointerX) * maxTilt}deg`);
+        });
+
+        card.addEventListener('pointerleave', () => {
+            card.style.removeProperty('--card-tilt-x');
+            card.style.removeProperty('--card-tilt-y');
+        });
+    });
+}
+
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const siteHeader = document.querySelector('.site-header');
