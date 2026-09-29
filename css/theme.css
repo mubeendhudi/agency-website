@@ -1016,39 +1016,30 @@ section.section-light .project-meta p {
 
 .faq-item {
     border-bottom: 1px solid rgba(255, 255, 255, .16);
-    interpolate-size: allow-keywords;
 }
 
-.faq-item::details-content {
-    block-size: 0;
-    overflow: clip;
-    opacity: 0;
-    transition: block-size .32s ease, opacity .24s ease, content-visibility .32s allow-discrete;
-}
-
-.faq-item[open]::details-content {
-    block-size: auto;
-    opacity: 1;
-}
-
-.faq-item summary {
+.faq-question {
+    width: 100%;
     min-height: 66px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    border: 0;
+    background: transparent;
     color: #fff;
-    font-weight: 700;
-    line-height: 1.5;
-    list-style: none;
+    font: 700 15px/1.5 Manrope, sans-serif;
+    text-align: left;
     cursor: pointer;
 }
 
-.faq-item summary::-webkit-details-marker {
-    display: none;
+.faq-question:focus-visible {
+    outline: 2px solid var(--accent-green-light);
+    outline-offset: 3px;
 }
 
-.faq-item summary::after {
+.faq-question::after {
     flex: 0 0 auto;
     color: var(--accent-green-light);
     content: '+';
@@ -1056,19 +1047,37 @@ section.section-light .project-meta p {
     font-weight: 400;
 }
 
-.faq-item[open] summary::after {
+.faq-item.is-open .faq-question::after {
     content: '-';
 }
 
-.faq-item > p {
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows .34s cubic-bezier(.2, .7, .2, 1), opacity .24s ease;
+}
+
+.faq-item.is-open .faq-answer {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.faq-answer-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.faq-answer p {
     max-width: 620px;
-    margin: -2px 34px 20px 0;
+    margin: 0;
+    padding: 0 34px 20px 0;
     color: rgba(255, 255, 255, .76);
     font-size: 14px;
     line-height: 1.75;
 }
 
-.faq-item > p a {
+.faq-answer p a {
     color: var(--accent-green-light);
     font-weight: 700;
 }
@@ -1158,6 +1167,12 @@ section.section-light .project-meta p {
     box-shadow: 0 20px 50px rgba(0, 0, 0, .22);
 }
 
+.contact-orbit::before,
+.contact-orbit::after {
+    content: none;
+    display: none;
+}
+
 .office-details {
     width: 100%;
     text-align: left;
@@ -1189,6 +1204,10 @@ section.section-light .project-meta p {
     color: #c4d2c8;
     font-size: 13px;
     line-height: 1.6;
+}
+
+.office-details span {
+    transform: none;
 }
 
 .office-details a {

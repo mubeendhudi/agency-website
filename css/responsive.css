@@ -229,7 +229,7 @@
 
     .main-nav,
     .menu-toggle,
-    .faq-item::details-content {
+    .faq-answer {
         transition: none;
         transform: none;
     }

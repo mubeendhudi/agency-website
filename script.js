@@ -111,3 +111,15 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('click', (event) => {
     if (!nav.contains(event.target) && !menuToggle.contains(event.target)) setMenuOpen(false);
 });
+
+document.querySelectorAll('.faq-question').forEach((question) => {
+    const answer = document.getElementById(question.getAttribute('aria-controls'));
+
+    question.addEventListener('click', () => {
+        const isOpen = question.getAttribute('aria-expanded') === 'true';
+        question.setAttribute('aria-expanded', String(!isOpen));
+        answer.setAttribute('aria-hidden', String(isOpen));
+        answer.toggleAttribute('inert', isOpen);
+        question.closest('.faq-item').classList.toggle('is-open', !isOpen);
+    });
+});
