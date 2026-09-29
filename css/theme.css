@@ -1179,7 +1179,7 @@ section.section-light .project-meta p {
 }
 
 .office-details p {
-    margin: 0 0 26px;
+    margin: 0;
     color: var(--accent-green-light);
     font: 11px 'DM Mono', monospace;
     letter-spacing: .12em;
