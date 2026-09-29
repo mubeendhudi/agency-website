@@ -255,7 +255,7 @@ h2 em {
     gap: 10px;
     border-radius: 999px;
     box-sizing: border-box;
-    font: 800 15px Manrope, sans-serif;
+    font: 800 15px Manrope, sans-serif !important;
     letter-spacing: 0;
     text-decoration: none;
     transition: background .3s ease, background-position .4s ease, border-color .3s ease, box-shadow .3s ease, color .3s ease, transform .3s ease;
