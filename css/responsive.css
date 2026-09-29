@@ -44,17 +44,6 @@
 
 /* Tablet and mobile navigation */
 @media (max-width: 800px) {
-    .topbar {
-        padding: 0 5vw;
-        justify-content: space-between;
-        gap: 12px;
-        font-size: 10px;
-    }
-
-    .topbar-social {
-        display: none;
-    }
-
     .site-header {
         height: 72px;
         position: sticky;
@@ -140,11 +129,6 @@
         font-size: 58px;
     }
 
-    .hero-foot {
-        left: 7vw;
-        right: 7vw;
-    }
-
     .hero-insights {
         flex-wrap: wrap;
         gap: 28px;
@@ -217,15 +201,6 @@
         display: block;
     }
 
-    .work-heading .text-link {
-        display: inline-block;
-        margin-top: 20px;
-    }
-
-    .project-wide {
-        grid-column: auto;
-    }
-
     .quote-section {
         padding: 70px 8vw;
     }
@@ -262,14 +237,6 @@
 
 /* Compact phones */
 @media (max-width: 520px) {
-    .topbar {
-        font-size: 9px;
-    }
-
-    .topbar>a:last-child {
-        display: none;
-    }
-
     .brand {
         font-size: 19px;
     }
@@ -299,14 +266,34 @@
     }
 
     .hero-scroll-link {
-        display: flex;
-        justify-self: start;
-        align-items: center;
-        gap: 12px;
+        display: none;
     }
 
     .hero h1 {
         font-size: 48px;
+    }
+
+    .button-primary {
+        min-width: 190px;
+        min-height: 46px;
+        padding: 0 16px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .hero-actions > .button-primary {
+        min-width: 190px;
+        min-height: 46px;
+        padding: 0 16px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .about-copy .button-primary {
+        min-width: 190px;
+        min-height: 46px;
+        padding: 0 16px;
+        font-size: 13px;
     }
 
     .hero-actions {
@@ -335,8 +322,8 @@
         font-size: 13px;
     }
 
-    .ai-callout .hero-cta-primary {
-        min-height: 60px;
+    .ai-callout .button-primary {
+        min-height: 46px;
     }
 
     .section-heading h2,
@@ -359,11 +346,11 @@
     }
 
     .service-cta-button {
-        width: min(260px, 100%);
+        width: min(240px, 100%);
         min-width: 0;
-        min-height: 60px;
-        padding: 0 18px;
-        font-size: 13px;
+        min-height: 46px;
+        padding: 0 14px;
+        font-size: 12px;
     }
 
     .industry-card,
