@@ -1250,6 +1250,11 @@ section.section-light .project-meta p {
     line-height: 1.6;
 }
 
+.office-details span {
+    transform: none;
+    text-align: left;
+}
+
 .office-details a {
     color: var(--accent-green-light);
     font-weight: 700;
