@@ -1,4 +1,18 @@
 /* 07. Theme responsive overrides */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        max-width: none;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+}
+
 @media (max-width: 900px) {
     .site-header {
         padding: 0 5vw;
@@ -120,13 +134,14 @@
     }
 
     .hero {
-        min-height: 630px;
-        padding: 40px 7vw 75px;
+        min-height: 0;
+        padding: 42px 7vw 58px;
         background-position: 62% center;
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
-        font-size: 58px;
+        font-size: clamp(48px, 6vw, 62px);
     }
 
     .hero-insights {
@@ -229,9 +244,13 @@
 
     .main-nav,
     .menu-toggle,
-    .faq-answer {
+    .faq-answer,
+    .hero-chart span,
+    .hero-code-card,
+    .hero-uptime-chip {
         transition: none;
         transform: none;
+        animation: none;
     }
 }
 
@@ -247,8 +266,11 @@
 
     .hero {
         min-height: 590px;
-        padding-top: 30px;
+        min-height: 0;
+        padding: 30px 7vw 52px;
         background-position: 67% center;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .hero-insights {
