@@ -315,14 +315,14 @@ h2 em {
 }
 
 .hero-actions .hero-cta-secondary {
-    min-width: 0;
-    min-height: 44px;
-    padding: 0 14px;
+    min-width: 220px;
+    min-height: 54px;
+    padding: 0 22px;
     gap: 8px;
     border: 1px solid rgba(255, 255, 255, .14);
     background: rgba(255, 255, 255, .015);
     color: #f5f4ee;
-    font: 600 13px Manrope, sans-serif;
+    font: 600 15px Manrope, sans-serif;
     text-transform: none;
 }
 

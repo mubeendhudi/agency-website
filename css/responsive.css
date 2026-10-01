@@ -311,6 +311,13 @@
         font-size: 13px;
     }
 
+    .hero-actions > .hero-cta-secondary {
+        min-width: 190px;
+        min-height: 46px;
+        padding: 0 16px;
+        font-size: 13px;
+    }
+
     .about-copy .button-primary {
         min-width: 190px;
         min-height: 46px;
