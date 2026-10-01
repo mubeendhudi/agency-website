@@ -188,7 +188,7 @@ body::before {
 
 .hero {
     min-height: 650px;
-    padding: 58px 7vw 68px;
+    padding: 90px 7vw 68px;
     background: transparent;
     display: grid;
     grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
@@ -431,6 +431,8 @@ h2 em {
 /* Engineering dashboard artwork in the hero */
 .hero-visual {
     position: relative;
+    top: -70px;
+    right: 10px;
     isolation: isolate;
     width: 100%;
     max-width: 600px;
