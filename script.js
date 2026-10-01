@@ -123,3 +123,15 @@ document.querySelectorAll('.faq-question').forEach((question) => {
         question.closest('.faq-item').classList.toggle('is-open', !isOpen);
     });
 });
+
+const contactUsLink = document.querySelector('.contact-copy a[href^="mailto:"]');
+const desktopViewport = window.matchMedia('(min-width: 1025px)');
+
+contactUsLink?.addEventListener('click', (event) => {
+    if (!desktopViewport.matches) return;
+
+    event.preventDefault();
+    const emailAddress = contactUsLink.getAttribute('href').slice('mailto:'.length);
+    const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+    window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
+});
